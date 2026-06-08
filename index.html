@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Password Toggle</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .password {
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            border: 1px solid black;
+            width: fit-content;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        input { 
+            padding: 10px 5px; 
+            border: none;
+        }
+        button { 
+            cursor: pointer; 
+            padding: 5px 10px; 
+        }
+        button > img {
+            background-color: transparent;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="password">
+        <input type="password" id="password" placeholder="Input Password">
+        <button type="button" id="toggleBtn">👁️</button>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById("password");
+        const toggleBtn = document.querySelector("button");
+
+        toggleBtn.addEventListener("click", () => {
+            if (password.type === "password") {
+                password.type = "text";
+                toggleBtn.textContent = "👁️‍🗨️";
+            } else {
+                password.type = "password";
+                toggleBtn.textContent = "👁️";
+            }
+        });
+    </script>
+</body>
+</html>
