@@ -7,18 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="password">
-        <input type="password" id="password">
-        <button type="button" id="btn">
-            <img src="eye.svg" id="eyeIcon" alt="eye">
-        </button>
+    <nav>
+        <div class="btnNavbar">
+            <button type="button"><img src="menu.svg" alt="button"></button>
+        </div>
+        <ul>
+            <li>Setting</li>
+            <li>Ganti Password</li>
+            <li>Lupa Password</li>
+        </ul>
+    </nav>
+    <div class="page-password">
+        <div class="password">
+            <input type="password" id="password">
+            <button type="button" id="btn">
+                <img src="eye.svg" id="eyeIcon" alt="eye">
+            </button>
+        </div>
     </div>
 
     <script>
         const passwordInput = document.getElementById("password");
         const toggleBtn = document.getElementById("btn");
-        const eyeIcon = document.querySelector("img");
+        const eyeIcon = document.querySelector(".password > button > img");
 
         toggleBtn.addEventListener("click", () => {
             if (passwordInput.type === "password") {
@@ -28,6 +39,13 @@
                 passwordInput.type = "password";
                 eyeIcon.src = "eye.svg";
             }
+        });
+
+        const menuBtn = document.querySelector(".btnNavbar button");
+        const navList = document.querySelector("nav > ul"); 
+
+        menuBtn.addEventListener("click", () => {
+            navList.classList.toggle("active");
         });
     </script>
 </body>
